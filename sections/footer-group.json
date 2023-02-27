@@ -5,14 +5,15 @@
     "0d51b0f5-7724-4bc8-991e-c28936c2c644": {
       "type": "section-slider-products",
       "blocks": {
-        "1cd4a3bb-a8a3-4d69-ab13-84a94ba50abe": {
+        "aa175e63-07b3-4296-b92e-5276653a02b8": {
           "type": "product",
           "settings": {
+            "proposal_product": "fresh-foam-1080"
           }
         }
       },
       "block_order": [
-        "1cd4a3bb-a8a3-4d69-ab13-84a94ba50abe"
+        "aa175e63-07b3-4296-b92e-5276653a02b8"
       ],
       "settings": {
         "include_margins": true
