@@ -10,17 +10,39 @@
           "settings": {
             "proposal_product": "fresh-foam-1080"
           }
+        },
+        "ef16874c-9fdd-48cb-b1fa-836ab2f7ecdf": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "new-balance-9060"
+          }
+        },
+        "9ac0620e-5d22-46ca-8fc7-c2fe059d69ab": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fresh-foam-1080"
+          }
+        },
+        "bb427cc7-4541-4942-9ef3-7cf3737616d3": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "new-balance-9060"
+          }
+        },
+        "88cb9494-6edb-449e-a08c-d3635614262a": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "fresh-foam-1080"
+          }
         }
       },
       "block_order": [
-        "aa175e63-07b3-4296-b92e-5276653a02b8"
+        "aa175e63-07b3-4296-b92e-5276653a02b8",
+        "ef16874c-9fdd-48cb-b1fa-836ab2f7ecdf",
+        "9ac0620e-5d22-46ca-8fc7-c2fe059d69ab",
+        "bb427cc7-4541-4942-9ef3-7cf3737616d3",
+        "88cb9494-6edb-449e-a08c-d3635614262a"
       ],
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "b9132339-9c67-40c9-bc57-ab36585ee65f": {
-      "type": "section-slider-products",
       "settings": {
         "include_margins": true
       }
@@ -73,7 +95,6 @@
   },
   "order": [
     "0d51b0f5-7724-4bc8-991e-c28936c2c644",
-    "b9132339-9c67-40c9-bc57-ab36585ee65f",
     "footer"
   ]
 }
