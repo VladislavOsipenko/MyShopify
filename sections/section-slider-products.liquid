@@ -2,8 +2,8 @@
   <div class="slider-product-proposal">
     <div class="page-width slider-product-proposal__container">
       <div class="slider-product-proposal__content">
-        <h2 class="slider-product-proposal__title"></h2>
-        <div class="slider-product-proposal__subtitle"></div>
+        <h2 class="slider-product-proposal__title">Produt title</h2>
+        <div class="slider-product-proposal__subtitle">Produt subtitle</div>
       </div>
       <div class="slider-product-proposal__slider">
         <div class="slider-product-proposal__slider-list">
@@ -26,12 +26,16 @@
 <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    $('#shopify-section-      {{section.id}} .slider-product-proposal__slider-list').slick()
+    $('#shopify-section-{{section.id}} .slider-product-proposal__slider-list').slick({
+      infinite: true,
+      slidesToShow: {{ section.settings.slider_items }},
+      slidesToScroll: 3
+    });
   });
 </script>
 <style>
   body {
-    background-color: red !important;
+    background-color: green !important;
   }
 </style>
 {% schema %}
@@ -41,11 +45,14 @@
     "class": "section",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "include_margins",
-        "default": true,
-        "label": "t:sections.apps.settings.include_margins.label"
-      }
+      "type": "range",
+      "id": "slider_items",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Items per page",
+      "default": 2
+    }
     ],
     "blocks": [
       {
