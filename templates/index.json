@@ -35,7 +35,9 @@
         "f8a53bf2-574f-493d-9c51-806b7c1266c0"
       ],
       "settings": {
-        "slider_items": 3
+        "slider_items": 3,
+        "slider_items_tab": 2,
+        "slider_items_mob": 1
       }
     },
     "image_banner": {
@@ -110,11 +112,18 @@
         "padding_top": 28,
         "padding_bottom": 36
       }
+    },
+    "56871d92-e796-4cd7-8071-1efc7dede23b": {
+      "type": "image-get-links",
+      "settings": {
+        "get_image_v_1": "shopify:\/\/shop_images\/black-friday-online-store.jpg"
+      }
     }
   },
   "order": [
     "417b7117-1685-4ae3-a490-0f38095508a6",
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "56871d92-e796-4cd7-8071-1efc7dede23b"
   ]
 }
