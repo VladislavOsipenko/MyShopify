@@ -1,4 +1,11 @@
 <div class="page-width">
+  <h2>
+    Using snipets
+  </h2>
+  <div style="border: 1px solid orange">
+    {% render 'icons', icon: 'tiktok'' %}
+
+  </div>
   {% comment %} Первый способ показать картинку на странице {% endcomment %}
   {% if section.settings.get_image_v_1 != blank %}
     <div id="get_image_v_1" style="padding: 5px; margin: 5px; border: 1x solid black">

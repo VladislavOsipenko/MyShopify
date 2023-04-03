@@ -44,7 +44,9 @@
         "88cb9494-6edb-449e-a08c-d3635614262a"
       ],
       "settings": {
-        "include_margins": true
+        "slider_items": 3,
+        "slider_items_tab": 2,
+        "slider_items_mob": 1
       }
     },
     "footer": {
