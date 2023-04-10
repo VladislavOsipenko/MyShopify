@@ -138,8 +138,43 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "rich-text": {
+        "type": "rich-text",
+        "blocks": {
+          "2026f9a6-91b6-4aaa-ad53-62bc52850f50": {
+            "type": "heading",
+            "settings": {
+              "heading": "<p>Talk about your brand 3<\/p>",
+              "heading_size": "h1"
+            }
+          },
+          "af480aaf-152e-4bbf-a8ed-cb148473602d": {
+            "type": "caption",
+            "settings": {
+              "caption": "Add a tagline",
+              "text_style": "caption-with-letter-spacing",
+              "text_size": "medium"
+            }
+          }
+        },
+        "block_order": [
+          "2026f9a6-91b6-4aaa-ad53-62bc52850f50",
+          "af480aaf-152e-4bbf-a8ed-cb148473602d"
+        ],
+        "settings": {
+          "desktop_content_position": "center",
+          "content_alignment": "center",
+          "color_scheme": "background-1",
+          "full_width": true,
+          "padding_top": 40,
+          "padding_bottom": 52
+        }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
