@@ -28,6 +28,10 @@
                 <div class="slide-item__price">
                   {{ product.price | money_with_currency }}
                 </div>
+                <div class="slider-item__buttons">
+                  <button style="position: relative; z-index: 100" class="button button--primary" data-ajax-add="{{ product.selected_or_first_available_variant }}">ADD WITH AJAX</button>
+                  <button style="position: relative; z-index: 100" class="button button--primary">ADD WITH DAWN</button>
+                </div>
               </div>
             {% endif %}
           {% endfor %}
@@ -59,15 +63,37 @@
             infinite: true,
             dots: true
           }
-        },
-        {
+        }, {
           breakpoint: 576,
           settings: {
             slidesToShow: {{ section.settings.slider_items_mob }},
-            slidesToScroll: {{ section.settings.slider_items_mob }},
+            slidesToScroll: {{ section.settings.slider_items_mob }}
           }
         }
       ]
+    });
+    $('#shopify-section-{{section.id}}').on('click', '[data-ajax-add]', function (e) {
+      const itemId =  parseInt($(this).attr('data-ajax-add'));
+      $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        dataType: 'json',
+        data: {
+            quantity: 1,
+            id: itemId
+        },
+        success: function(data) {
+           console.log(data, "data")
+             $.ajax({
+                type: 'GET',
+                dataType: 'jsonp',
+                url: '/cart.json',
+                success: function(cart) {
+                  console.log(cart, "cart")
+                }
+              }) 
+        }
+      })
     });
   });
 </script>
@@ -86,8 +112,7 @@
         "step": 1,
         "label": "Items per page",
         "default": 3
-      },
-      {
+      }, {
         "type": "range",
         "id": "slider_items_tab",
         "min": 1,
@@ -95,8 +120,7 @@
         "step": 1,
         "label": "Items per page",
         "default": 2
-      },
-      {
+      }, {
         "type": "range",
         "id": "slider_items_mob",
         "min": 1,

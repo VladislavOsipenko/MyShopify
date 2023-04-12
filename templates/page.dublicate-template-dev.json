@@ -27,6 +27,13 @@
             "heading_size": "h1"
           }
         },
+        "template--18068218937655__0af30c9d-f2f1-409c-8943-2f6fd717c50c-1680888109893c5e73-1": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
         "template--18068218937655__0af30c9d-f2f1-409c-8943-2f6fd717c50c-1680888109893c5e73-2": {
           "type": "buttons",
           "settings": {
