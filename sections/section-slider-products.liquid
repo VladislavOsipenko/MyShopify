@@ -1,103 +1,143 @@
-{% if section.blocks.size > 0 %}
-  <div class="slider-product-proposal">
-    <div class="page-width slider-product-proposal__container">
-      <div class="slider-product-proposal__content">
-        <h2 class="slider-product-proposal__title">Produt title</h2>
-        <div class="slider-product-proposal__subtitle">Produt subtitle</div>
-      </div>
-      <div class="slider-product-proposal__slider">
-        <div class="slider-product-proposal__slider-list">
-          {% for block in section.blocks %}
-            {% if block.settings.proposal_product != blank %}
-              {% assign product = block.settings.proposal_product %}
-              <div class="slider-product-proposal__slider-item">
-                <a href="{{ product.url }}" class="slider-item__link"></a>
-                <div class="slider-item__image">
-                  <img
-                    src="{{ product.featured_image | img_url: '700x' }}"
-                    alt="{{ product.featured_image.alt | default: product.title }}"
-                    class="slider-item__picture"
-                    loading="lazy">
-                </div>
-                <h4 class="slider-item__title">{{ product.title }}</h4>
-                {% if product.content != block %}
-                  <div class="slider-item__content">
-                    {{ product.content | truncate: 120, "..." }}
-                  </div>
-                {% endif %}
-                <div class="slide-item__price">
-                  {{ product.price | money_with_currency }}
-                </div>
-                <div class="slider-item__buttons">
-                  <button style="position: relative; z-index: 100" class="button button--primary" data-ajax-add="{{ product.selected_or_first_available_variant }}">ADD WITH AJAX</button>
-                  <button style="position: relative; z-index: 100" class="button button--primary">ADD WITH DAWN</button>
-                </div>
+{% if section.blocks.size > 0 %}<div class="slider-product-proposal">
+  <div class="page-width slider-product-proposal__container">
+    <div class="slider-product-proposal__content">
+      <h2 class="slider-product-proposal__title">Produt title</h2>
+      <div class="slider-product-proposal__subtitle">Produt subtitle</div>
+    </div>
+    <div class="slider-product-proposal__slider">
+      <div class="slider-product-proposal__slider-list">
+        {% for block in section.blocks %}
+          {% if block.settings.proposal_product != blank %}
+            {% assign product = block.settings.proposal_product %}
+            <div class="slider-product-proposal__slider-item">
+              <a href="{{ product.url }}" class="slider-item__link"></a>
+              <div class="slider-item__image">
+                <img src="{{ product.featured_image | img_url: '700x' }}" alt="{{ product.featured_image.alt | default: product.title  }}" class="slider-item__picture" loading="lazy">
+              </div>              
+              <h4 class="slider-item__title">{{ product.title }}</h4>
+              {% if product.content != blank %}
+                <div class="slider-item__content">
+                  {{ product.content | truncate: 120, "..."  }}
+                </div>                
+              {% endif %}
+              <div class="slider-item__price">
+                {{ product.price | money_with_currency }}
               </div>
-            {% endif %}
-          {% endfor %}
-        </div>
+              <div class="slider-item__buttons">
+                  <button style="z-index: 100" class="button button--primary" data-ajax-add="{{ product.selected_or_first_available_variant.id }}">ADD WITH AJAX</button>
+                  {%- assign product_form_id = 'quick-add-' | append: section_id | append: product.id -%}            
+                  <product-form>
+                    {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ product.selected_or_first_available_variant.id }}"
+                        disabled
+                      >
+                      <button
+                        style="z-index: 100"
+                        id="{{ product_form_id }}-submit"
+                        type="submit"
+                        name="add"
+                        class="quick-add__submit button button--full-width button--secondary"
+                        aria-haspopup="dialog"
+                        aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}"
+                        aria-live="polite"
+                        data-sold-out-message="true"
+                        {% if product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available -%}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="sold-out-message hidden">
+                          {{ 'products.product.sold_out' | t }}
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            role="presentation"
+                            class="spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </button>
+                    {%- endform -%}
+                  </product-form>
+              </div>
+            </div>              
+          {% endif %}        
+        {% endfor %}
       </div>
     </div>
   </div>
+</div>  
 {% endif %}
-
-
 
 {{ 'slick.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     $('#shopify-section-{{section.id}} .slider-product-proposal__slider-list').slick({
-      dots: false,
       infinite: true,
-      speed: 1000,
       slidesToShow: {{ section.settings.slider_items }},
-      slidesToScroll: 1,
+      slidesToScroll: 2,
+      speed: 1000,
+      prevArrow: $('#shopify-section-{{section.id}} .control-prev'),
+      nextArrow: $('#shopify-section-{{section.id}} .control-next'),
       responsive: [
         {
           breakpoint: 1024,
           settings: {
             slidesToShow: {{ section.settings.slider_items_tab }},
-            slidesToScroll: {{ section.settings.slider_items_tab }},
-            infinite: true,
-            dots: true
+            slidesToScroll: {{ section.settings.slider_items_tab }}
           }
-        }, {
+        },
+        {
           breakpoint: 576,
           settings: {
-            slidesToShow: {{ section.settings.slider_items_mob }},
-            slidesToScroll: {{ section.settings.slider_items_mob }}
+            slidesToShow:  1,
+            slidesToScroll: 1
           }
         }
       ]
     });
     $('#shopify-section-{{section.id}}').on('click', '[data-ajax-add]', function (e) {
-      const itemId =  parseInt($(this).attr('data-ajax-add'));
-      $.ajax({
-        type: 'POST',
-        url: '/cart/add.js',
-        dataType: 'json',
-        data: {
-            quantity: 1,
-            id: itemId
-        },
-        success: function(data) {
-           console.log(data, "data")
-             $.ajax({
-                type: 'GET',
-                dataType: 'jsonp',
-                url: '/cart.json',
-                success: function(cart) {
-                  console.log(cart, "cart")
-                }
+        const itemId =  parseInt($(this).attr('data-ajax-add'));
+        $.ajax({
+          type: 'POST',
+          url: '/cart/add.js',
+          dataType: 'json',
+          data: {
+              quantity: 1,
+              id: itemId
+          },
+          success: function(data) {
+             console.log(data, "data")
+               $.ajax({
+                  type: 'GET',
+                  dataType: 'jsonp',
+                  url: '/cart.json',
+                  success: function(cart) {
+                    console.log(cart, "cart")
+                  }
               }) 
-        }
+          }
       })
     });
   });
 </script>
-<style></style>
 {% schema %}
   {
     "name": "Slider Products",
