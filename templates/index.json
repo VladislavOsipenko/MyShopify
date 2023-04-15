@@ -1,5 +1,10 @@
 {
   "sections": {
+    "8402d6fb-b02d-44a9-bddc-e99a9374efb0": {
+      "type": "schema-settings-blocks",
+      "settings": {
+      }
+    },
     "417b7117-1685-4ae3-a490-0f38095508a6": {
       "type": "section-slider-products",
       "blocks": {
@@ -122,6 +127,7 @@
     }
   },
   "order": [
+    "8402d6fb-b02d-44a9-bddc-e99a9374efb0",
     "417b7117-1685-4ae3-a490-0f38095508a6",
     "image_banner",
     "featured_collection",

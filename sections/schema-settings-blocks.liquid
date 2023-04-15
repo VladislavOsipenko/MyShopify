@@ -1,0 +1,31 @@
+{% if settings.enable_marketing == true %}
+  <div style="border: 1px solid purple ">
+    {% if settings.facebook_id != blank %}
+      <script>
+        console.log('facebook_id', '{{ settings.facebook_id }}');
+      </script>
+    {% endif %}
+    {% if settings.another_script != blank %}
+      <script>
+        console.log('enable another_script');
+      </script>
+      {{ settings.another_script }}
+    {% endif %}
+  </div>
+{% endif %}
+
+
+
+{% schema %}
+  {
+    "name": "Schema section blocks",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Schema section blocks"
+      }
+    ]
+  }
+{% endschema %}

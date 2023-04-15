@@ -1,5 +1,6 @@
 {
   "current": {
+    "another_script": "<script>\n  console.log('Another script works');\n<\/script>",
     "logo_width": 90,
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
