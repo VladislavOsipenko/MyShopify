@@ -1,8 +1,40 @@
 {
   "sections": {
-    "8402d6fb-b02d-44a9-bddc-e99a9374efb0": {
+    "89f90a69-984b-405a-b63a-7a4930a2f32d": {
       "type": "schema-settings-blocks",
+      "blocks": {
+        "template--18068219265335__89f90a69-984b-405a-b63a-7a4930a2f32d-168157503497a0212a-0": {
+          "type": "benefit",
+          "settings": {
+            "title": "Free shipping"
+          }
+        },
+        "template--18068219265335__89f90a69-984b-405a-b63a-7a4930a2f32d-168157503497a0212a-1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Benegit 2"
+          }
+        },
+        "bcaa0185-6a94-4fe4-8e0d-57264f08f8a4": {
+          "type": "offer",
+          "settings": {
+          }
+        },
+        "cfd6972b-1874-471c-ac37-f070cf9a5025": {
+          "type": "offer",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--18068219265335__89f90a69-984b-405a-b63a-7a4930a2f32d-168157503497a0212a-0",
+        "template--18068219265335__89f90a69-984b-405a-b63a-7a4930a2f32d-168157503497a0212a-1",
+        "bcaa0185-6a94-4fe4-8e0d-57264f08f8a4",
+        "cfd6972b-1874-471c-ac37-f070cf9a5025"
+      ],
       "settings": {
+        "title": "Benefits",
+        "subtitle": "<p>Our benefit description<\/p>"
       }
     },
     "417b7117-1685-4ae3-a490-0f38095508a6": {
@@ -127,7 +159,7 @@
     }
   },
   "order": [
-    "8402d6fb-b02d-44a9-bddc-e99a9374efb0",
+    "89f90a69-984b-405a-b63a-7a4930a2f32d",
     "417b7117-1685-4ae3-a490-0f38095508a6",
     "image_banner",
     "featured_collection",

@@ -1,3 +1,4 @@
+{% comment %} Global settings {% endcomment %}
 {% if settings.enable_marketing == true %}
   <div style="border: 1px solid purple ">
     {% if settings.facebook_id != blank %}
@@ -13,18 +14,140 @@
     {% endif %}
   </div>
 {% endif %}
+{% comment %} Local section settings code {% endcomment %}
+<div class="schema-settings-blocks__section">
+  {% if section.settings.title != blank %}
+    <h3>
+      {{ section.settings.title }}
+    </h3>
+  {% endif %}
+  {% if section.settings.subtitle != blank %}
+    <div>
+      {{ section.settings.subtitle }}
+    </div>
+  {% endif %}
+  {% if section.blocks.size > 0 %}
+    <ul>
+      {% for block in section.blocks %}
+        {% if block.settings.title != blank and block.type == 'benefit' %}
+          <li>
+            {{ block.settings.title }}
+            <ul>
+              {% for i in (1..6) %}
+                {% assign count_name = 'benefit_' | append: i %}
+                {% assign benefit_title = block.settings[count_name] %}
+                {% if benefit_title != blank %}
+                  <li>
+                    {{ count_name }} = {{ benefit_title }}
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div>
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank and block.type == 'offer' %}
+          <img src="{{ block.settings.image | img_url: 'small'}}" alt="{{ block.settings.image.alt | default: section.settings.title }}">
+        {% endif %}
+      {% endfor %}
+    </div>
 
 
+  {% endif %}
+</div>
 
+{% comment %} Local section settings schema {% endcomment %}
 {% schema %}
   {
     "name": "Schema section blocks",
     "tag": "section",
-    "class": "section",
-    "settings": [],
+    "class": "section schema-settings-blocks",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section title",
+        "default": "Benefit titles"
+      }, {
+        "type": "richtext",
+        "id": "subtitle",
+        "label": "section subtitle",
+        "default": "<p>Our benefit description</p>"
+      }
+    ],
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "name": "Benefit",
+        "type": "benefit",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Benefit title",
+            "default": "benefit text 1"
+          },
+          {
+            "type": "text",
+            "id": "benefit_1",
+            "label": "Benefit 1",
+            "default": "benefit text 2"
+          },
+          {
+            "type": "text",
+            "id": "benefit_2",
+            "label": "Benefit 2",
+            "default": "benefit text 3"
+          },
+          {
+            "type": "text",
+            "id": "benefit_3",
+            "label": "Benefit 3",
+            "default": "benefit text 4"
+          }, {
+            "type": "text",
+            "id": "benefit_4",
+            "label": "Benefit 4",
+            "default": "benefit text 5"
+          }, {
+            "type": "text",
+            "id": "benefit_5",
+            "label": "Benefit 5"
+          }, {
+            "type": "text",
+            "id": "benefit_6",
+            "label": "Benefit 6"
+          }
+        ]
+      }, {
+        "name": "Offer",
+        "type": "offer",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Offer image"
+          }
+        ]
+      }
+    ],
     "presets": [
       {
-        "name": "Schema section blocks"
+        "name": "Schema section blocks",
+        "settings": {
+          "title": "Benefits "
+        },
+        "blocks": [
+          {
+            "type": "benefit"
+          }, {
+            "type": "benefit"
+          }
+        ]
       }
     ]
   }
