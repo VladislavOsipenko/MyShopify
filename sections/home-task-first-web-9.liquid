@@ -1,0 +1,142 @@
+<div class="container" style="border: 1px solid yellow; padding: 10px 10px">
+  <div class="home-task-web9__section">
+    {% if section.settings.title != blank %}
+      <h3>
+        {{ section.settings.title }}
+      </h3>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <div>
+        {{ section.settings.subtitle }}
+      </div>
+    {% endif %}
+    <div class="home-task-web9__block">
+      {% if section.blocks.size > 0 %}
+        <ul>
+          {% for block in section.blocks %}
+            {% if block.settings.task_1 != blank and block.type == 'hometask' %}
+              <li>
+                {{ block.settings.task_1 }}
+              </li>
+            {% endif %}
+            {% if block.settings.task_12 != blank and block.type == 'hometask' %}
+              <li>
+                {{ block.settings.task_12 }}</li>
+            {% endif %}
+            {% if block.settings.task_2 != blank and block.type == 'image' %}
+              {{ block.settings.task_2 }}
+              <img src="{{ block.settings.image | img_url: 'small'}}" alt="{{ block.settings.image.alt | default: section.settings.task_2 }}">
+            {% endif %}
+            {% if block.settings.task_3 != blank and block.type == 'product' %}
+              {{ block.settings.task_3 }}
+              {{ block.settings.task_33 }}
+            {% endif %}
+
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Home-task",
+    "tag": "section",
+    "class": "home-task-web9",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section title",
+        "default": "Title section title"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Section subtitle",
+        "default": "Subtitle section subtitle"
+      }, {
+        "type": "color",
+        "id": "body_text-color",
+        "label": "Body text",
+        "default": "#000000"
+      }
+
+    ],
+    "blocks": [
+      {
+        "name": "Hometask",
+        "type": "hometask",
+        "settings": [
+          {
+            "type": "text",
+            "id": "task_1",
+            "label": "Title",
+            "default": "Task_1"
+          }, {
+            "type": "text",
+            "id": "task_12",
+            "label": "Subtitle",
+            "default": "Task_1"
+          }, {
+            "type": "color",
+            "id": "body_text",
+            "label": "Body text",
+            "default": "#000000"
+          }
+        ]
+
+      }, {
+        "name": "Image",
+        "type": "image",
+        "settings": [
+          {
+            "type": "text",
+            "id": "task_2",
+            "label": "Title",
+            "default": "Task_1"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image image"
+          }
+        ]
+      }, {
+        "name": "Product",
+        "type": "product",
+        "settings": [
+          {
+            "type": "text",
+            "id": "task_3",
+            "label": "Title-3",
+            "default": "Task_3"
+          }, {
+            "type": "product_list",
+            "id": "task_33",
+            "label": "Products",
+            "limit": 12
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home task web #9",
+        "settings": {
+          "title": "Hometask "
+        },
+        "blocks": [
+          {
+            "type": "hometask"
+          }, {
+            "type": "image"
+          }, {
+            "type": "product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
