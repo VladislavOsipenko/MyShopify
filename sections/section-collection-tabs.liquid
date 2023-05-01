@@ -1,0 +1,137 @@
+{% if section.blocks.size > 0 %}
+  {{ 'section-collection-tabs.css' | asset_url | stylesheet_tag }}
+  <div class="section-collection-tabs__section">
+    <div class="page-width section-collection-tabs__container">
+      <div class="section-collection-tabs__heading">
+        {% if section.settings.title != blank %}
+          <h2 class="section-collection-tabs__title">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <div class="section-collection-tabs__description">{{ section.settings.description }}</div>
+        {% endif %}
+      </div>
+      <div class="section-collection-tabs__content">
+        <div class="section-collection-tabs__tabs tab">
+          <div class="section-collection-tabs__tab-head tab__heading">
+            <ul class="list">
+              {% assign first_tab = true %}
+              {% for block in section.blocks %}
+                {% assign collection_tab = block.settings.collection %}
+                {% if collection_tab !=blank %}
+                  {% if collection_tab.all_products_count > 0 %}
+                    <li class="list__item {% if first_tab == true %}active{% endif %}">
+                      <a href="#" class="list__link">{{ block.settings.alternative_title | default: collection_tab.title }}</a>
+                    </li>
+                    {% if first_tab == true %}
+                      {% assign first_tab = false %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="section-collection-tabs__tabs-body tab__body">
+            <ul class="list">
+              {% assign first_tab = true %}
+              {% for block in section.blocks %}
+                {% assign collection_tab = block.settings.collection %}
+                {% if collection_tab !=blank %}
+                  <li class="list__item {% if first_tab == true %}active{% endif %}">
+                    {% if collection_tab.all_products_count > 0 %}
+                      <ul class="grid product-grid contains-card contains-card--product">
+                        {% for tab_product in collection_tab.products limit: 3 %}
+                          <li class="grid__item">
+                            {% render 'card-product',
+                              card_product: tab_product,
+                              show_secondary_image: false,
+                              show_vendor: false,
+                              show_rating: false,
+                              show_quick_add: true,
+                              section_id: section.id
+                            %}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                      {% if section.settings.button_text %}
+                        <a href="{{ collection_tab.url }}" class="button">{{ section.settings.button_text }}</a>
+                      {% endif %}
+                    {% else %}
+                      We have not product in this section
+                    {% endif %} 
+                    {% if first_tab == true %}
+                      {% assign first_tab = false %}
+                    {% endif %}
+                    
+                  </li>
+                  
+                {% endif %}
+              {% endfor %}
+              
+              
+            </ul>
+          </div>
+        </div>
+        
+
+
+          
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Collection tabs",
+    "tag": "section",
+    "class": "section section-collection-tabs",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section title",
+        "default": "Favorit products"
+      }, {
+        "type": "richtext",
+        "id": "description",
+        "label": "section subtitle",
+        "default": "<p>Chose your dream</p>"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text",
+        "default": "Vue all products"
+      }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "name": "Collection tab",
+        "type": "collection-tab",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "alternative_title",
+            "label": "Collection alternative title",
+            "info": "Use a title instead of the standard collection title "
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection tabs"
+      }
+    ]
+  }
+{% endschema %}

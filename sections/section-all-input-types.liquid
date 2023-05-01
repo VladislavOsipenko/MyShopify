@@ -102,7 +102,7 @@
     <div>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa labore fuga doloremque, optio perspiciatis laborum. Consequatur illum eum dolores molestiae, quos atque perferendis minima voluptatibus iusto doloremque odit nihil similique.
       Exercitationem architecto quasi laudantium voluptatum esse rem cupiditate atque magnam. Consequatur asperiores sapiente labore illo maxime. Aperiam repellendus, totam sunt delectus ullam illum eaque mollitia pariatur a itaque odio atque?
-                                                             te ad debitis maxime culpa eum, aliquid vero sed quaerat, voluptate, veniam a? Praesentium quisquam fugit cum rem aliquid atque, corrupti placeat aut, omnis possimus reprehenderit amet, quidem veritatis a.
+                                                                                                                                                                                                      te ad debitis maxime culpa eum, aliquid vero sed quaerat, voluptate, veniam a? Praesentium quisquam fugit cum rem aliquid atque, corrupti placeat aut, omnis possimus reprehenderit amet, quidem veritatis a.
     </div>
     <p>
       <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit ducimus aut soluta vel, saepe natus ipsum odio eos repudiandae? Eius tempora eligendi expedita fugiat cupiditate explicabo voluptatum ipsa dolor nulla!</span>
@@ -110,11 +110,11 @@
     </p>
   </div>
   <style>
-    #shopify-section-{{ section.id}}.section-all-input-types__block--color {
+    #shopify-section-{{ section.id }}.section-all-input-types__block--color {
       color: {{ section.settings.input_color}}
       ;
     }
-    #shopify-section-{{ section.id}}.section-all-input-types__block--color div {
+    #shopify-section-{{ section.id }}.section-all-input-types__block--color div {
       background-color: {{ section.settings.input_bg_color }}
       ;
       color: inherit;
@@ -125,6 +125,57 @@
       color: inherit;
     }
   </style>
+</div>
+<hr>
+<div class="sectio-all-types__homework">
+  <h2>Homework</h2>
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      {% if block.type == 'colors' and block.settings.menu != blank %}
+        <div class="section-all-types__colors section-all-types-{{ block.id }}" style="background-color: {{ block.settings.background_text }}">
+          {% assign input_linklist = block.settings.menu %}
+          {% if input_linklist.links.size > 0 %}
+            <ul>
+              {% for link in input_linklist.links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    <ul>
+                      {% for child_link in link.links %}
+                        <li>
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          {% if child_link.links.size > 0 %}
+                            <ul>
+                              {% for child_child_link in child_link.links %}
+                                <li>
+                                  <a href="{{ child_child_link.url }}">{{ child_child_link.title }}</a>
+                                </li>
+
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                        </li>
+
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <style>
+            .section-all-types-{{ block.id }}{
+              display: block;
+              color: {{ block.settings.color_text | default: '#000' }}
+              ;
+            }
+          </style>
+        </div>
+
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 </div>
 
 
@@ -280,11 +331,29 @@
         "id": "input_bg_color",
         "label": "BF COLOR 1",
         "default": "#7CFC00"
-      }, {
-        "type": "color_background",
-        "id": "input_background",
-        "label": "BG Color 2",
-        "default": "linear-gradient(#ffffff, #000000)"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Colors",
+        "type": "colors",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+          }, {
+            "type": "color",
+            "id": "color_text",
+            "label": "Color text",
+            "default": "#FF0000"
+          }, {
+            "type": "color",
+            "id": "background_text",
+            "label": "Backgraund text",
+            "default": "#FFFF00"
+          }
+        ]
       }
     ],
     "presets": [
