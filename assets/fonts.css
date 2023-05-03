@@ -1,0 +1,48 @@
+@font-face {
+  font-family: FontName;
+  src: url('path/filename.eot');
+  src: url('path/filename.eot?#iefix') format('embedded-opentype'),
+  src: url("path/filename.otf") format("opentype"),
+    url('path/filename.woff2') format('woff2'), 
+    url('path/filename.woff') format('woff'),
+    url('path/filename.ttf') format('truetype');
+}
+
+
+
+
+@font-face {
+  font-family: FontName;
+  src: url('path/filename.woff2') format('woff2'), 
+    url('path/filename.woff') format('woff');
+}
+
+
+    @font-face {
+  font-family: 'CenturyGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('{{ 'CenturyGothic-Regular.ttf' | asset_url }}') format('truetype');
+    }
+       @font-face {
+  font-family: 'CenturyGothic';
+  font-style: italic;
+  font-weight: 400;
+  src: url('{{ 'CenturyGothic-Italic.ttf' | asset_url }}') format('truetype');
+    }
+       @font-face {
+  font-family: 'CenturyGothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('{{ 'CenturyGothic-Bold.ttf' | asset_url }}') format('truetype');
+    }
+       @font-face {
+  font-family: 'CenturyGothic';
+  font-style: italic;
+  font-weight: 700;
+  src: url('{{ 'CenturyGothic-BoldItalic.ttf' | asset_url }}') format('truetype');
+    }
+
+body {
+  font-family: 'FontName', Helvetica, Arial, sans-serif;
+}

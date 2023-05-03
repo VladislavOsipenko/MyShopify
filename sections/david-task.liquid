@@ -1,0 +1,88 @@
+{{ 'david-task.css' | asset_url | stylesheet_tag }}
+<div class="section-david-task">
+  <div class="section-david-task__bg" ">
+    <img
+      class="background"
+      src="{{ section.settings.image_bg | img_url: ''| default: './assets/bg.jpg'  }}"
+      alt="{{ section.settings.image_bg | default: 'bg' }}">
+    <div class="section-david-task__container">
+      <div class="section-david-task__wrapper">
+        <div class="section-david-task__sweater">
+          <div class="section-david-task__circle1">
+            <div class="section-david-task__blur"></div>
+            <div class="section-david-task__circle2">
+              <div class="section-david-task__circle3">
+                <img src="{{ section.settings.image_sweater | img_url: '' | default: './assets/sweater.svg' }}" alt="{{ section.settings.image_sweater | default: 'sweater' }}">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-david-task__info">
+          <h2 class="section-david-task__title">{{ section.settings.title }}</h2>
+          <div class="section-david-task__subtitle">{{ section.settings.subtitle }}</div>
+          <div class="section-david-task__prise">{{ section.settings.prise }}</div>
+          <div class="section-david-task__description">{{ section.settings.description }}</div>
+        </div>
+        <div class="section-david-task__girl">
+          <img src="{{ section.settings.image_girl | img_url: '100%' | default: './assets/girl.svg' }}" alt="{{ section.settings.image_girl | default: 'girl' }}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "David task",
+    "tag": "section",
+    "class": "section section-david-task",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section title",
+        "default": "JISOO FROM BLACKPINK"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Section subtitle",
+        "default": "red sweatshirt"
+      },
+      {
+        "type": "text",
+        "id": "prise",
+        "label": "Section prise",
+        "default": "$320.00"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_bg",
+        "label": "Image BG"
+      }, {
+        "type": "image_picker",
+        "id": "image_girl",
+        "label": "Image Girl"
+      }, {
+        "type": "image_picker",
+        "id": "image_sweater",
+        "label": "Image Swieter"
+      }, {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+        "default": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim."
+      }
+
+    ],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "David Task"
+      }
+    ]
+  }
+{% endschema %}

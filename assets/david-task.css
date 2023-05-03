@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ "Montserrat-Regular.woff2" | asset_url }}') format('woff2');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('{{ "Montserrat-Medium.woff2" | asset_url }}') format('woff2');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ "Montserrat-Bold.woff2" | asset_url }}') format('woff2');
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-david-task {
+    min-height: 465px;
+
+}
+
+.section-david-task__bg {
+    width: 100%;
+    position: relative;
+    z-index: -2;
+}
+.backgraund {
+    position: relative;
+    z-index: -1;
+}
+
+
+.section-david-task__container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+}
+
+.section-david-task__wrapper {
+    width: 1300px;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+
+} 
+
+.background {
+    min-height: 465px;
+}
+
+.section-david-task__sweater {
+}
+
+.section-david-task__circle1 {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 325.45px;
+    height: 325px;
+    border: 1px solid #ffff;
+    border-radius: 100%;
+    transform: matrix(1, -0.07, 0.07, 1, 0, 0);
+}
+
+.section-david-task__blur {
+    position: absolute;
+    display: block;
+    width: 250.35px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.48);
+    filter: blur(69.5px);
+    z-index: 2;
+    
+}
+
+.section-david-task__circle2 {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 291.4px;
+    height: 291px;
+    border: 1px solid #ffff;
+    border-radius: 100%;
+    transform: matrix(1, -0.07, 0.07, 1, 0, 0);
+
+}
+
+.section-david-task__circle3 {
+    box-sizing: border-box;
+    width: 250.34px;
+    height: 250px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(92.47deg, #68B7A8 1.88%, #98D8BD 99.27%);
+    box-shadow: 3.27044px 3.27044px 7.19497px rgba(29, 29, 29, 0.25);
+    transform: matrix(-1, 0.08, 0.08, 1, 0, 0);
+    
+}
+
+.section-david-task__circle3 img {
+    position: relative;
+    z-index: 3;
+    width: 250px;
+    height: 250px;
+}
+
+.section-david-task__info {
+
+}
+
+.section-david-task__title {
+    margin: 0;
+    text-align: right;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 49px;
+    color: #FEFEFE;
+
+}
+
+.section-david-task__subtitle {
+    margin-top: 30px;
+    font-style: normal;
+    text-align: right;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 112.02%;
+    letter-spacing: -0.05em;
+    text-transform: capitalize;
+    color: #FCFCFC;
+}
+
+.section-david-task__prise {
+    margin-top: 11px;
+    text-align: right;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 112.02%;
+    letter-spacing: -0.05em;
+    text-transform: capitalize;
+    color: #515151;
+    text-shadow: 3px 0px 3px rgba(201, 201, 201, 0.25);
+
+}
+
+.section-david-task__description {
+    margin-top: 20px;
+    width: 495px;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: right;
+    text-transform: capitalize;
+    color: #FEFEFE;
+}
+
+.section-david-task__girl {
+    
+
+}
+.section-david-task__girl img {
+    position: absolute;
+    right: 0;
+    top: -186px;
+}
+
+@media screen and (max-width: 1300px) {
+    .section-david-task__wrapper {
+        width: 900px;
+        z-index: 1;
+    }
+    .section-david-task__girl img {
+        z-index: -1;
+    }
+}
+@media screen and (max-width: 991px) {
+    .section-david-task__wrapper {
+        width: 700px;
+    }
+    .section-david-task__description {
+        width: auto;
+        font-size: 20px;
+    }
+    .section-david-task__prise {
+        font-size: 30px;
+    }
+    .section-david-task__subtitle {
+        font-size: 22px;
+    }
+    .section-david-task__title {
+       font-size: 37px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-david-task__wrapper {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        width: 500px;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-david-task__girl img {
+        display: none;
+    }
+    .section-david-task__description {
+        margin-top: 12px;
+        width: auto;
+        font-size: 18px;
+        text-align: center;
+    }
+    .section-david-task__prise {
+        margin-top: 8px;
+        font-size: 25px;
+        text-align: center;
+    }
+    .section-david-task__subtitle {
+        margin-top: 15px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .section-david-task__title {
+       font-size: 30px;
+       text-align: center;
+    }
+    .background {
+        min-height: 550px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .section-david-task__wrapper {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
