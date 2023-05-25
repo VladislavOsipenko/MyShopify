@@ -35,72 +35,10 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "41a63314-4308-447c-9c59-a54d230004c8": {
-      "type": "home-task-first-web-9",
-      "blocks": {
-        "sections--18068219494711__41a63314-4308-447c-9c59-a54d230004c8-1683121730e652e791-0": {
-          "type": "hometask",
-          "settings": {
-            "task_1": "Task_1",
-            "task_12": "Task_1",
-            "body_text": "#000000"
-          }
-        },
-        "sections--18068219494711__41a63314-4308-447c-9c59-a54d230004c8-1683121730e652e791-1": {
-          "type": "image",
-          "settings": {
-            "task_2": "Task_1"
-          }
-        },
-        "sections--18068219494711__41a63314-4308-447c-9c59-a54d230004c8-1683121730e652e791-2": {
-          "type": "product",
-          "settings": {
-            "task_3": "Task_3",
-            "task_33": [
-
-            ]
-          }
-        }
-      },
-      "block_order": [
-        "sections--18068219494711__41a63314-4308-447c-9c59-a54d230004c8-1683121730e652e791-0",
-        "sections--18068219494711__41a63314-4308-447c-9c59-a54d230004c8-1683121730e652e791-1",
-        "sections--18068219494711__41a63314-4308-447c-9c59-a54d230004c8-1683121730e652e791-2"
-      ],
-      "settings": {
-        "title": "Hometask",
-        "subtitle": "Subtitle section subtitle",
-        "body_text-color": "#000000"
-      }
-    },
-    "fd27bb17-d02f-4436-94c4-8787f30d1ef8": {
-      "type": "david-task",
-      "settings": {
-        "title": "JISOO FROM BLACKPINK",
-        "subtitle": "red sweatshirt",
-        "prise": "$320.00",
-        "image_bg": "shopify:\/\/shop_images\/bg.jpg",
-        "image_girl": "shopify:\/\/shop_images\/girl.svg",
-        "image_sweater": "shopify:\/\/shop_images\/sweater.svg",
-        "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim."
-      }
-    },
-    "3965012a-26d8-4eee-b8ea-07246c7dce76": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "background-1",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "41a63314-4308-447c-9c59-a54d230004c8",
-    "fd27bb17-d02f-4436-94c4-8787f30d1ef8",
-    "3965012a-26d8-4eee-b8ea-07246c7dce76"
+    "header"
   ]
 }

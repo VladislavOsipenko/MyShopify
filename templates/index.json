@@ -6,13 +6,25 @@
         "template--18068219265335__89f90a69-984b-405a-b63a-7a4930a2f32d-168157503497a0212a-0": {
           "type": "benefit",
           "settings": {
-            "title": "Free shipping"
+            "title": "Free shipping",
+            "benefit_1": "benefit text 2",
+            "benefit_2": "benefit text 3",
+            "benefit_3": "benefit text 4",
+            "benefit_4": "benefit text 5",
+            "benefit_5": "",
+            "benefit_6": ""
           }
         },
         "template--18068219265335__89f90a69-984b-405a-b63a-7a4930a2f32d-168157503497a0212a-1": {
           "type": "benefit",
           "settings": {
-            "title": "Benegit 2"
+            "title": "Benegit 2",
+            "benefit_1": "benefit text 2",
+            "benefit_2": "benefit text 3",
+            "benefit_3": "benefit text 4",
+            "benefit_4": "benefit text 5",
+            "benefit_5": "",
+            "benefit_6": ""
           }
         },
         "bcaa0185-6a94-4fe4-8e0d-57264f08f8a4": {
@@ -58,10 +70,16 @@
             "proposal_product": "new-balance-u574-v2"
           }
         },
-        "f8a53bf2-574f-493d-9c51-806b7c1266c0": {
+        "5845fbaa-fc77-4e6d-a061-6d4b43a6d5cc": {
           "type": "product",
           "settings": {
-            "proposal_product": "fresh-foam-1080"
+            "proposal_product": "new-balance-ct302-v1"
+          }
+        },
+        "b32e8bf4-60f9-4430-ab36-4b4c4c9ce694": {
+          "type": "product",
+          "settings": {
+            "proposal_product": ""
           }
         }
       },
@@ -69,7 +87,8 @@
         "4375b5d0-287b-4409-9dd8-2a9d304f59df",
         "adafcafc-77a5-4a2f-8493-8689e69f4df7",
         "6a122412-cceb-4a78-89f7-e01d7a7fdcd5",
-        "f8a53bf2-574f-493d-9c51-806b7c1266c0"
+        "5845fbaa-fc77-4e6d-a061-6d4b43a6d5cc",
+        "b32e8bf4-60f9-4430-ab36-4b4c4c9ce694"
       ],
       "settings": {
         "slider_items": 3,
