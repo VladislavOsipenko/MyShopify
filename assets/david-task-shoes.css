@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ "Montserrat-Regular.woff2" | asset_url }}') format('woff2');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('{{ "Montserrat-Medium.woff2" | asset_url }}') format('woff2');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ "Montserrat-Bold.woff2" | asset_url }}') format('woff2');
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.section-david-shoes {
+    padding: 20px 0;
+    background: #515151;
+
+}
+
+.section-david-shoes__container {
+
+}
+
+.section-david-shoes__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+
+}
+
+.section-david-shoes__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-david-shoes__top {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.section-david-shoes__top-wrapper {
+
+}
+
+.section-david-shoes__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 88.52%;
+    text-align: center;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+}
+
+.section-david-shoes__price {
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 73.02%;
+    /* or 9px */
+    color: #E9E9E9;
+}
+
+.section-david-shoes__heart-wrapper {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-david-shoes__heart {
+    width: 15px; 
+    height: 15px; 
+    background-color: #fff; 
+    transform: rotate(45deg);
+    position: relative;
+    border: 1px #000 solid;
+
+}
+
+.section-david-shoes__heart::after {
+    content : '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    border-right: rgba(0, 0, 0, 0);
+    border-left: 1px #000 solid;
+    left: -7.5px;
+}
+
+.section-david-shoes__heart::before {
+    content : '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -7.5px;
+    border-bottom: rgba(0, 0, 0, 0);
+    border-top: 1px #000 solid;
+    left: 0;
+}
+
+.section-david-shoes__product {
+    margin-top: 20px;
+    width: 421px;
+    height: 236px;  
+    padding: 25px 25px;
+    background: #606060;
+
+}
+
+.section-david-shoes__product-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.section-david-shoes__category {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+}
+
+.section-david-shoes__new-wrapper {
+    width: 57px;
+    height: 19px;
+    background: linear-gradient(93.78deg, #3EB4AE -17.72%, #D0EDC3 107.93%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-david-shoes__new {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    /* or 9px */
+    color: #FFFFFF;
+
+}
+
+.section-david-shoes__image {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

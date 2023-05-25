@@ -1,0 +1,81 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+<link
+  rel="stylesheet"
+  href="{{ 'quick-add.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'">
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<div style="border: 1px solid orange">
+  <div class="page-width product-benefits-metafield__section">
+    <div class="product-benefits-metafield__wrapper">
+      {% for i in (1..6) %}
+        {% assign count_name = 'item_' | append: i %}
+        {% assign benefit_title = product.metafields.benefit_section[count_name].value %}
+        {% if benefit_title != blank %}
+          <div class="product-benefits-metafield__block">
+            {{ benefit_title }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div style="border: 1px solid blue">
+  <div class="page-width product-benefits-metafield__section">
+    <div class="grid product-grid">
+      {% for i in (1..3) %}
+        {% assign count_name = 'product_' | append: i %}
+        {% assign recommendation_product = product.metafields.recommendation[count_name].value %}
+        {% if recommendation_product != blank %}
+          <li class="grid__item">
+            {% render 'card-product' 
+             , card_product: recommendation_product,
+             show_secondary_image: false,
+             show_vendor: true,
+             show_rating: false,
+             show_quick_add: true,
+             section_id: section.id %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+  .product-benefits-metafield__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 0;
+    margin: 0 - 15px;
+  }
+  .product-benefits-metafield__block {
+    margin: 15px;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Product BNF metafield",
+    "tag": "section",
+    "class": "section product-benefits-metafield",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "This section use metafields"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product benefits metafield"
+      }
+    ]
+  }
+{% endschema %}
