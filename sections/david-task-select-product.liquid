@@ -1,0 +1,62 @@
+{{ 'david-task-select-product.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size > 0 %}
+  <div class="section-select-product">
+    <div class="page-width section-select-product__wrapper">
+      <div class="section-select-product__block">
+        {% for block in section.blocks %}
+          {% if block.settings.proposal_product != blank %}
+            {% assign product = block.settings.proposal_product %}
+            <div class="section-select-product__item">
+              <a href="{{ product.url }}" class="section-select-product__item-link"></a>
+              <div class="section-select-product__item-image">
+                <img
+                  src="{{ product.featured_image | img_url: '300x' }}"
+                  alt="{{ product.featured_image.alt | default: product.title  }}"
+                  class="section-select-product__item-picture"
+                  loading="lazy">
+              </div>
+              <h4 class="section-select-product__item-title">{{ product.title }}</h4>
+              {% if product.content != blank %}
+                <div class="section-select-product__item-content">
+                  {{ product.content | truncate: 120, "..." }}
+                </div>
+              {% endif %}
+              <div class="section-select-product__item-price">
+                {{ product.price | money_with_currency }}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Metafield Test Section",
+    "tag": "section",
+    "class": "section section-select-product",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Proposal product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "proposal_product",
+            "label": "Our proposal Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Select product"
+      }
+    ]
+  }
+{% endschema %}
