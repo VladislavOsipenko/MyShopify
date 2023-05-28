@@ -943,6 +943,16 @@ class VariantSelects extends HTMLElement {
           html,
           variant: this.currentVariant
         }});
+        //  Variant features
+        const featureInformation = html.getElementById(`variant-features -${this.dataset.section}`);
+        const spikeData = featureInformation.querySelector(`#variant-features--data`).getAttribute('data-feature-spike');
+        const spikeBlock = document.querySelector('.variant-features--spike');
+
+        if (spikeData == true) {
+          spikeBlock.style.display = 'block';
+        } else {
+          spikeBlock.style.display = 'none';
+        }
       });
   }
 

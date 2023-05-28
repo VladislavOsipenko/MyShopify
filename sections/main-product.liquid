@@ -88,7 +88,16 @@
                     {{ product.title | escape }}
                   </h2>
                 </a>
-                <p>The product has a spike</p>
+                {% comment %} variant_metafield {% endcomment %}
+                <div class="variant-feature--stike"   
+                {% unless product.selected_or_first_available_variant.metafields.feature.spike.value == true %}
+                   style="display: none;"
+                {% endunless %}>
+                  <p>{{ product.metafields.global.product_spike.value }}</p>
+                </div>
+                
+                
+                
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -98,6 +107,10 @@
                   show_badges: true,
                   price_class: 'price--large'
                 -%}
+                {% assign selected_feature_variant = product.selected_or_first_available_variant %}
+                <div id="variant-features-{{ section.id }}" style="display: !important;">
+                  <div id="variant-features--data" data-feature-spike="{{ selected_feature_variant.metafields.feature.spike.value | default: false }}"></div>          
+                </div>
               </div>
               {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                 <div class="product__tax caption rte">
