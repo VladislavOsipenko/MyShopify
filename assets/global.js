@@ -804,6 +804,7 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability();
     this.removeErrorMessage();
     this.updateVariantStatuses();
+    this.hideButtons();
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
@@ -814,6 +815,22 @@ class VariantSelects extends HTMLElement {
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
+    }
+  }
+
+  hideButtons() {
+    const id = this.currentVariant.id;
+    const variantUrl = document.querySelector(`#button-in-store-${id}`);
+    const form = document.querySelector('product-form');
+    const urlArr = document.querySelectorAll('.button-in-store--button');
+    urlArr.forEach((item) => {
+      item.style.display = 'none'
+    });
+    if (!variantUrl) {
+      form.style.display = "block";
+    } else {
+      variantUrl.style.display = "inline-flex";
+      form.style.display = "none";
     }
   }
 
