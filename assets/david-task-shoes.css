@@ -36,9 +36,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
-
 }
+
 
 .section-david-shoes__wrapper {
     display: flex;
@@ -79,6 +78,7 @@ body {
 
 .section-david-shoes__heart-wrapper {
     cursor: pointer;
+    padding-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,8 +90,6 @@ body {
     background-color: #fff; 
     transform: rotate(45deg);
     position: relative;
-    border: 1px #000 solid;
-
 }
 
 .section-david-shoes__heart::after {
@@ -103,8 +101,6 @@ body {
     border-radius: 50%;
     position: absolute;
     top: 0;
-    border-right: rgba(0, 0, 0, 0);
-    border-left: 1px #000 solid;
     left: -7.5px;
 }
 
@@ -117,8 +113,6 @@ body {
     border-radius: 50%;
     position: absolute;
     top: -7.5px;
-    border-bottom: rgba(0, 0, 0, 0);
-    border-top: 1px #000 solid;
     left: 0;
 }
 
@@ -128,7 +122,6 @@ body {
     height: 236px;  
     padding: 25px 25px;
     background: #606060;
-
 }
 
 .section-david-shoes__product-wrapper {

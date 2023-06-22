@@ -2,6 +2,21 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "color_scheme": "background-1",
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -18,77 +33,11 @@
       "block_order": [
         "announcement-bar-0"
       ],
-      "settings": {
-      }
-    },
-    "header": {
-      "type": "header",
-      "settings": {
-        "color_scheme": "background-1",
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
-    "63d66610-d142-4bf0-8f75-fa314826d0b6": {
-      "type": "david-task",
-      "settings": {
-        "title": "JISOO FROM BLACKPINK",
-        "subtitle": "red sweatshirt",
-        "prise": "$320.00",
-        "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim."
-      }
-    },
-    "590096ed-8377-4656-bdfe-84cbf152322b": {
-      "type": "david-task-shoes",
-      "blocks": {
-        "sections--18806966452535__590096ed-8377-4656-bdfe-84cbf152322b-1685021979e7fea181-0": {
-          "type": "david-shoes",
-          "settings": {
-            "shoes-title": "Your title",
-            "shoes-price": "Your price",
-            "shoes-category": "Сategory",
-            "show-new": true
-          }
-        },
-        "sections--18806966452535__590096ed-8377-4656-bdfe-84cbf152322b-1685021979e7fea181-1": {
-          "type": "david-shoes",
-          "settings": {
-            "shoes-title": "Your title",
-            "shoes-price": "Your price",
-            "shoes-category": "Сategory",
-            "show-new": true
-          }
-        },
-        "sections--18806966452535__590096ed-8377-4656-bdfe-84cbf152322b-1685021979e7fea181-2": {
-          "type": "david-shoes",
-          "settings": {
-            "shoes-title": "Your title",
-            "shoes-price": "Your price",
-            "shoes-category": "Сategory",
-            "show-new": true
-          }
-        }
-      },
-      "block_order": [
-        "sections--18806966452535__590096ed-8377-4656-bdfe-84cbf152322b-1685021979e7fea181-0",
-        "sections--18806966452535__590096ed-8377-4656-bdfe-84cbf152322b-1685021979e7fea181-1",
-        "sections--18806966452535__590096ed-8377-4656-bdfe-84cbf152322b-1685021979e7fea181-2"
-      ],
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
-    "announcement-bar",
     "header",
-    "63d66610-d142-4bf0-8f75-fa314826d0b6",
-    "590096ed-8377-4656-bdfe-84cbf152322b"
+    "announcement-bar"
   ]
 }
