@@ -21,3 +21,115 @@ body {
 }
 
 
+.section-david-reviews {
+    background: #464646;
+    min-height: 542px;
+}
+
+.section-david-reviews-container {
+    position: relative;
+}
+
+.section-david-reviews-hooks {
+    position: absolute;
+    display: flex;
+    gap: 36px;
+}
+
+.section-david-reviews-block {
+    position: relative;
+    z-index: 2; 
+}
+.section-david-reviews-hook {}
+
+.section-david-reviews-top {
+    padding-top: 75px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-david-reviews-title {
+    color: #FEFEFE;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section-david-reviews-arrows {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-david-reviews-arrow-left {}
+
+.arrow-prew {}
+
+.section-david-reviews-arrow-right {
+    transform: rotate(180deg);
+}
+
+.arrow-next {}
+
+.section-david-reviews-slider {
+    margin-top: 100px;
+}
+
+.section-david-reviews-slider-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-david-reviews-slider-item {
+    position: relative;
+    width: 335px;
+    min-height: 188px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #606060;
+    box-shadow: 20px 20px 25px 0px rgba(30, 30, 30, 0.17);
+
+}
+
+.slider__item-icon {
+    position: absolute;
+    top: 0;
+    left: 36px;
+    transform: translateY(-50%);
+}
+
+.slider__item-title-block {
+    
+    width: 200px;
+    display: flex;
+}
+
+.slider__item-title {
+    color: #FEFEFE;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.slider__item-title-icon {
+    display: flex;
+}
+
+.slider__item-descr {
+    width: 200px;
+    color: #FEFEFE;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}

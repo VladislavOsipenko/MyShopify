@@ -2,24 +2,48 @@
 {% if section.blocks.size > 0 %}
   <div class="section-david-reviews">
     <div class="page-width section-david-reviews-container">
-      <div class="section-david-reviews-block">
-        <div class="section-david-reviews-hooks">
-          <div class="section-david-reviews-hook">{% render 'review-icon.liquid' %}</div>
-          <div class="section-david-reviews-hook">{% render 'review-icon.liquid' %}</div>
+      <div class="section-david-reviews-hooks">
+        <div class="section-david-reviews-hook ">
+          {% render 'review-icon.liquid' %}
         </div>
-        <div class="section-david-reviews-title">
-          {{ section.settings.reviews-title }}
+        <div class="section-david-reviews-hook">
+          {% render 'review-icon.liquid' %}
+        </div>
+      </div>
+      <div class="section-david-reviews-block">
+        <div class="section-david-reviews-top">
+          <div class="section-david-reviews-title">
+            {{ section.settings.reviews-title }}
+          </div>
+          <div class="section-david-reviews-arrows">
+            <div class="section-david-reviews-arrow-left arrow-prew">
+              {% render 'arrow-left.liquid' %}
+            </div>
+            <div class="section-david-reviews-arrow-right arrow-next">
+              {% render 'arrow-right.liquid' %}
+            </div>
+          </div>
         </div>
         <div class="section-david-reviews-slider">
           <div class="section-david-reviews-slider-list">
             {% for block in section.blocks %}
-              {% if section.blocks != blank %}
-                <div class="section-david-reviews-slider-item">
-                  <div class="slider__item-icon">
-                    <img src="{{ blocks.settings.reviews-icon }}" alt="{{ blocks.settings.reviews-icon }}">
+              <div class="section-david-reviews-slider-item">
+                <div class="slider__item-icon">
+                  <img src="{{ block.settings.reviews-icon | img_url: 'master' }}" alt="{{ block.settings.reviews-icon | default: 'icon'  }}">
+                </div>
+                <div class="slider__item-title-block">
+                  <div class="slider__item-title-icon">
+                    <img src="/assets/review.svg" alt="review">
+                    <img src="/assets/review.svg" alt="review">
+                  </div>
+                  <div class="slider__item-title">
+                    {{ block.settings.review-title }}
                   </div>
                 </div>
-              {% endif %}
+                <div class="slider__item-descr">
+                  {{ block.settings.review-description }}
+                </div>
+              </div>
             {% endfor %}
           </div>
         </div>
@@ -27,7 +51,34 @@
     </div>
   </div>
 {% endif %}
-
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('#shopify-section-      {{section.id}} .section-david-reviews-slider-list').slick({
+      infinite: true,
+      slidesToShow: {{ section.settings.slider_items }},
+      slidesToScroll: 1,
+      speed: 1000,
+      dots: true,
+      prevArrow: $('#shopify-section-      {{section.id}} .control-prev'),
+      nextArrow: $('#shopify-section-      {{section.id}} .control-next'),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: {{ section.settings.slider_items_tab }},
+            slidesToScroll: {{ section.settings.slider_items_tab }}
+          }
+        }, {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
 
 
 {{ 'slick.css' | asset_url | stylesheet_tag }}
@@ -44,6 +95,30 @@
         "id": "reviews-title",
         "label": "Section title",
         "default": "Customer reviews"
+      }, {
+        "type": "range",
+        "id": "slider_items",
+        "min": 3,
+        "max": 8,
+        "step": 1,
+        "label": "Items per page",
+        "default": 3
+      }, {
+        "type": "range",
+        "id": "slider_items_tab",
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "label": "Items per page",
+        "default": 2
+      }, {
+        "type": "range",
+        "id": "slider_items_mob",
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "label": "Items per page",
+        "default": 1
       }
     ],
     "blocks": [
@@ -59,7 +134,7 @@
             "type": "text",
             "id": "review-title",
             "label": "Block title",
-            "default": "Block title"
+            "default": "Sara Casie"
           }, {
             "type": "text",
             "id": "review-description",
