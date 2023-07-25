@@ -1,0 +1,41 @@
+{{ 'david-task-reviews.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+  {
+    "name": "David reviews",
+    "tag": "section",
+    "class": "section section-david-reviews",
+    "settings": [
+      {
+        "type": "text",
+        "id": "review-title",
+        "label": "Section title",
+        "default": "Customer reviews"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "David Review",
+        "type": "david-review",
+        "settings": [
+          {
+            "type": "text",
+            "id": "review-title",
+            "label": "Block title",
+            "default": "Block title"
+          }, {
+            "type": "text",
+            "id": "review-description",
+            "label": "Block description",
+            "default": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "David Task Reviews"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,54 +1,33 @@
 <div class="page-width">
-  <h2>Contact form Extended</h2>
+  <h2>Request for custom sneakers</h2>
   {% form 'contact' %}
     <label for="contact[email]">
-      Email
+      Your Email
       <input type="email" name="contact[email]">
     </label>
-    Text
+
+    <br>
+    <label for="sneakers-color">What color do you want?</label>
+    <select id="sneakers-color" name="contact[sneakers-color]">
+      <option>Red</option>
+      <option>Pink</option>
+      <option>Blue</option>
+      <option>Yellow</option>
+    </select>
+    <br>
+    Sneakers size
+    <label for="contact[sneakers-size]">
+      <input
+        type="number"
+        name="contact[sneakers-size]"
+        pattern="[0-9]{2}"
+        size="2">
+    </label>
+    <br>
+    Your Comment
     <label for="contact[body]">
       <input type="textarea" name="contact[body]">
     </label>
-    <br>
-    <label for="request-type">What is this regarding?</label>
-    <select id="request-type" name="contact[request_type]">
-      <option>Returns</option>
-      <option>Shipping</option>
-      <option>Custom order</option>
-      <option>Other</option>
-    </select>
-    <br>
-    <label for="contact-method">How do you want us to contact you?</label>
-    <input
-      type="radio"
-      name="contact[contact_method]"
-      value="email"
-      id="email"><label for="email">Email</label><br>
-    <input
-      type="radio"
-      name="contact[contact_method]"
-      value="phone"
-      id="phone"><label for="phone">Phone</label><br>
-    <input
-      type="radio"
-      name="contact[contact_method]"
-      value="text message"
-      id="text"><label for="text">Text message</label>
-    <br>
-    <label for="contact-time">When is the best time to reach you?</label>
-    <input
-      type="checkbox"
-      name="contact[contact_time_1]"
-      value="morning"><label for="morning">Morning</label><br>
-    <input
-      type="checkbox"
-      name="contact[contact_time_2]"
-      value="afternoon"><label for="afternoon">Afternoon</label><br>
-    <input
-      type="checkbox"
-      name="contact[contact_time_3]"
-      value="evening"><label for="evening">Evening</label>
-    <br>
     <button type="submit">SUBMIT</button>
     {{ form.errors | default_errors }}
   {% endform %}
