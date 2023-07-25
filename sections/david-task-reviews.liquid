@@ -1,0 +1,87 @@
+{{ 'david-task-reviews.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size > 0 %}
+  <div class="section-david-reviews">
+    <div class="page-width section-david-reviews-container">
+      <div class="section-david-reviews-block">
+        <div class="section-david-reviews-hooks">
+          <div class="section-david-reviews-hook">{% render 'review-icon.liquid' %}</div>
+          <div class="section-david-reviews-hook">{% render 'review-icon.liquid' %}</div>
+        </div>
+        <div class="section-david-reviews-title">
+          {{ section.settings.reviews-title }}
+        </div>
+        <div class="section-david-reviews-slider">
+          <div class="section-david-reviews-slider-list">
+            {% for block in section.blocks %}
+              {% if section.blocks != blank %}
+                <div class="section-david-reviews-slider-item">
+                  <div class="slider__item-icon">
+                    <img src="{{ blocks.settings.reviews-icon }}" alt="{{ blocks.settings.reviews-icon }}">
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+
+{{ 'slick.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+{% schema %}
+  {
+    "name": "David reviews",
+    "tag": "section",
+    "class": "section section-david-reviews",
+    "settings": [
+      {
+        "type": "text",
+        "id": "reviews-title",
+        "label": "Section title",
+        "default": "Customer reviews"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "David Review",
+        "type": "david-review",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "reviews-icon",
+            "label": "Block Icon"
+          }, {
+            "type": "text",
+            "id": "review-title",
+            "label": "Block title",
+            "default": "Block title"
+          }, {
+            "type": "text",
+            "id": "review-description",
+            "label": "Block description",
+            "default": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "David Task Reviews",
+        "blocks": [
+          {
+            "type": "david-review"
+          }, {
+            "type": "david-review"
+          }, {
+            "type": "david-review"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

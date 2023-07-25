@@ -58,12 +58,48 @@
         "template--18977336295735__1cf6e900-b640-4666-b585-acb6d0b15009-16855323579b59c5ef-1",
         "template--18977336295735__1cf6e900-b640-4666-b585-acb6d0b15009-16855323579b59c5ef-2"
       ],
-      "settings": {}
+      "settings": {
+      }
+    },
+    "2d3d62ea-4e1a-44ac-a393-2ec0fff2388c": {
+      "type": "david-task-reviews",
+      "blocks": {
+        "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-1": {
+          "type": "david-review",
+          "settings": {
+            "review-title": "Block title",
+            "review-description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          }
+        },
+        "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-2": {
+          "type": "david-review",
+          "settings": {
+            "review-title": "Block title",
+            "review-description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          }
+        },
+        "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-3": {
+          "type": "david-review",
+          "settings": {
+            "review-title": "Block title",
+            "review-description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          }
+        }
+      },
+      "block_order": [
+        "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-1",
+        "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-2",
+        "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-3"
+      ],
+      "settings": {
+        "review-title": "Customer reviews"
+      }
     }
   },
   "order": [
     "main",
     "6287baa5-c06e-4071-8a50-71df9f92bbb5",
-    "1cf6e900-b640-4666-b585-acb6d0b15009"
+    "1cf6e900-b640-4666-b585-acb6d0b15009",
+    "2d3d62ea-4e1a-44ac-a393-2ec0fff2388c"
   ]
 }
