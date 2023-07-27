@@ -57,21 +57,47 @@ body {
 }
 
 .section-david-reviews-arrows {
+    gap: 30px;
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-david-reviews-arrow-left {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.section-david-reviews-arrow-right {
+    cursor: pointer;
+    transform: rotate(180deg);
+    width: 36px;
+    height: 36px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.section-david-reviews-arrow-left {}
-
-.arrow-prew {}
-
-.section-david-reviews-arrow-right {
-    transform: rotate(180deg);
+.section-david-reviews-arrow-right, .section-david-reviews-arrow-left svg {
+    cursor: pointer; 
+    transition: .2s all;
 }
-
-.arrow-next {}
+.section-david-reviews-arrow-right:hover , .section-david-reviews-arrow-left:hover{
+    transition: .2s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 100%;
+    background: #69BAAA;
+}
 
 .section-david-reviews-slider {
     margin-top: 100px;
@@ -80,11 +106,13 @@ body {
 .section-david-reviews-slider-list {
     display: flex;
     justify-content: space-between;
+    height: 208px;
 }
 
 .section-david-reviews-slider-item {
     position: relative;
-    width: 335px;
+    max-width: 335px;
+    margin: 30px 54px;
     min-height: 188px;
     padding-top: 50px;
     padding-bottom: 20px;
@@ -97,6 +125,7 @@ body {
 
 }
 
+
 .slider__item-icon {
     position: absolute;
     top: 0;
@@ -108,6 +137,49 @@ body {
     transform: translateX(-28px);
     width: 200px;
     display: flex;
+}
+
+.slick-list {
+    padding-top: 32px;
+}
+
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.slick-dots li {
+    list-style-type: none;
+}
+
+.slick-dots .slick-active button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21px;
+    height: 21px;
+    border: none;
+    transition: .2s all;
+    border-radius: 100%;
+    background: #178A86;
+
+}
+
+.slick-dots li button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s all;
+    cursor: pointer;
+    background: #D3EEC4;
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 100%;
+    font-size: 0;
 }
 
 .slider__item-title {

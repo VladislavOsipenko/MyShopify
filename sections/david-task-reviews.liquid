@@ -54,9 +54,12 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     $('#shopify-section-{{section.id}} .section-david-reviews-slider-list').slick({
+      centerMode: true,
+      adaptiveHeight: true,
       infinite: true,
       slidesToShow: {{ section.settings.slider_items }},
       slidesToScroll: 1,
+      slidesToShow: 3,
       speed: 1000,
       dots: true,
       prevArrow: $('#shopify-section-{{section.id}} .arrow-prew'),
