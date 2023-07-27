@@ -87,15 +87,27 @@
             "review-title": "Block title",
             "review-description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
           }
+        },
+        "986248f4-d7fd-44ad-b1d8-7ed548a19c0f": {
+          "type": "david-review",
+          "settings": {
+            "reviews-icon": "shopify:\/\/shop_images\/sara-1.svg",
+            "review-title": "Sara Casie",
+            "review-description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          }
         }
       },
       "block_order": [
         "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-1",
         "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-2",
-        "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-3"
+        "template--18977336295735__2d3d62ea-4e1a-44ac-a393-2ec0fff2388c-david-review-3",
+        "986248f4-d7fd-44ad-b1d8-7ed548a19c0f"
       ],
       "settings": {
-        "review-title": "Customer reviews"
+        "reviews-title": "Customer reviews",
+        "slider_items": 3,
+        "slider_items_tab": 2,
+        "slider_items_mob": 1
       }
     }
   },

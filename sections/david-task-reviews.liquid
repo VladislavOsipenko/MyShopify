@@ -33,8 +33,8 @@
                 </div>
                 <div class="slider__item-title-block">
                   <div class="slider__item-title-icon">
-                    <img src="/assets/review.svg" alt="review">
-                    <img src="/assets/review.svg" alt="review">
+                    {% render 'review-mini.liquid' %}
+                    {% render 'review-mini.liquid' %}
                   </div>
                   <div class="slider__item-title">
                     {{ block.settings.review-title }}
@@ -53,14 +53,14 @@
 {% endif %}
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    $('#shopify-section-      {{section.id}} .section-david-reviews-slider-list').slick({
+    $('#shopify-section-{{section.id}} .section-david-reviews-slider-list').slick({
       infinite: true,
       slidesToShow: {{ section.settings.slider_items }},
       slidesToScroll: 1,
       speed: 1000,
       dots: true,
-      prevArrow: $('#shopify-section-      {{section.id}} .control-prev'),
-      nextArrow: $('#shopify-section-      {{section.id}} .control-next'),
+      prevArrow: $('#shopify-section-{{section.id}} .arrow-prew'),
+      nextArrow: $('#shopify-section-{{section.id}} .arrow-next'),
       responsive: [
         {
           breakpoint: 1024,

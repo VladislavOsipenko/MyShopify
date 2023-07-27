@@ -105,7 +105,7 @@ body {
 }
 
 .slider__item-title-block {
-    
+    transform: translateX(-28px);
     width: 200px;
     display: flex;
 }
@@ -121,10 +121,14 @@ body {
 }
 
 .slider__item-title-icon {
+    
+    padding-right: 5px;
+    gap: 4px;
     display: flex;
 }
 
 .slider__item-descr {
+    margin-top: 8px;
     width: 200px;
     color: #FEFEFE;
     font-size: 12px;
