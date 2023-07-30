@@ -1,8 +1,50 @@
 {{ 'david-task-collection.css' | asset_url | stylesheet_tag }}
-{% if section.blocks.size > 0 %}{% endif %}
+{% if section.blocks.size > 0 %}
+  <div class="section-david-collection">
+    <div class="page-width section-david-collection__container">
+      <h2 class="section-david-collection__title">
+        {{ section.settings.collection_title }}
+      </h2>
+      <div class="section-david-collection__slider">
+        <div class="section-david-collection__slider-list">
+          {% for block in section.blocks %}
+            {% if block.settings.collection_product != blank %}
+              {% assign product = block.settings.collection_product %}
+              <div class="section-david-collection__slider-item">
+                {% if block.settings.collection_background != blank %}
+                  <div class="slider-item__image-bg">
+                    <img
+                      src="/assets/collection-bg.jpg"
+                      alt="item-bg"
+                      class="slider-item__bg"
+                      loading="lazy">
+                  </div>
+                {% else %}
+                  <div class="slider-item__image-bg">
+                    {{ block.settings.collection_background }}
+                  </div>
+                {% endif %}
+                <a href="{{ product.url }}" class="slider-item__link"></a>
+                <div class="slider-item__image">
+                  <img
+                    src="{{ product.featured_image | img_url: 'master' }}"
+                    alt="{{ product.featured_image.alt | default: product.title  }}"
+                    class="slider-item__picture"
+                    loading="lazy">
+                </div>
+
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endif %}
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    $('#shopify-section-  {{section.id}} .section-david-reviews-slider-list').slick({
+    $('#shopify-section-               {{section.id}} .section-david-reviews-slider-list').slick({
       centerMode: true,
       adaptiveHeight: true,
       infinite: true,
@@ -11,8 +53,8 @@
       slidesToShow: 3,
       speed: 1000,
       dots: true,
-      prevArrow: $('#shopify-section-  {{section.id}} .arrow-prew'),
-      nextArrow: $('#shopify-section-  {{section.id}} .arrow-next'),
+      prevArrow: $('#shopify-section-               {{section.id}} .arrow-prew'),
+      nextArrow: $('#shopify-section-               {{section.id}} .arrow-next'),
       responsive: [
         {
           breakpoint: 1300,
@@ -44,7 +86,7 @@
     "settings": [
       {
         "type": "text",
-        "id": "collection-title",
+        "id": "collection_title",
         "label": "Section title",
         "default": "Collection"
       }, {
@@ -75,6 +117,10 @@
             "id": "collection-new",
             "label": "collection new",
             "default": true
+          }, {
+            "type": "image_picker",
+            "id": "collection_background",
+            "label": "Item background"
           }, {
             "type": "product",
             "id": "collection_product",
