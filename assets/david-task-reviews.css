@@ -114,6 +114,7 @@ body {
     max-width: 335px;
     margin: 30px 54px;
     min-height: 188px;
+    padding: 0 70px;
     padding-top: 50px;
     padding-bottom: 20px;
     display: flex;
@@ -125,6 +126,9 @@ body {
 
 }
 
+.slick-track .section-david-reviews-slider-item:nth-child(2n+1) {
+    background: #3F3F3F;
+}
 
 .slider__item-icon {
     position: absolute;
@@ -149,6 +153,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 14px;
+    padding: 0;
 }
 
 .slick-dots li {
@@ -209,3 +214,15 @@ body {
     line-height: normal;
     text-transform: capitalize;
 }
+@media screen and (max-width: 1024px) {
+    .section-david-reviews-slider-item {
+        margin: 30px 25px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .section-david-reviews {
+        min-height: 590px
+    }
+}
+        
+    

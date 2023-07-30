@@ -1,0 +1,101 @@
+{{ 'david-task-collection.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size > 0 %}{% endif %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('#shopify-section-  {{section.id}} .section-david-reviews-slider-list').slick({
+      centerMode: true,
+      adaptiveHeight: true,
+      infinite: true,
+      slidesToShow: {{ section.settings.slider_items }},
+      slidesToScroll: 1,
+      slidesToShow: 3,
+      speed: 1000,
+      dots: true,
+      prevArrow: $('#shopify-section-  {{section.id}} .arrow-prew'),
+      nextArrow: $('#shopify-section-  {{section.id}} .arrow-next'),
+      responsive: [
+        {
+          breakpoint: 1300,
+          settings: {
+            slidesToShow: {{ section.settings.slider_items_mob }},
+            slidesToScroll: {{ section.settings.slider_items_mob }}
+          }
+        }, {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+
+{{ 'slick.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+{% schema %}
+  {
+    "name": "David collection",
+    "tag": "section",
+    "class": "section section-david-collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "collection-title",
+        "label": "Section title",
+        "default": "Collection"
+      }, {
+        "type": "range",
+        "id": "slider_items",
+        "min": 3,
+        "max": 8,
+        "step": 1,
+        "label": "Items per page",
+        "default": 3
+      }, {
+        "type": "range",
+        "id": "slider_items_mob",
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "label": "Items per page",
+        "default": 1
+      }
+    ],
+    "blocks": [
+      {
+        "name": "David collection",
+        "type": "david-collection",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "collection-new",
+            "label": "collection new",
+            "default": true
+          }, {
+            "type": "product",
+            "id": "collection_product",
+            "label": "Our collection Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "David Task Collection",
+        "blocks": [
+          {
+            "type": "david-collection"
+          }, {
+            "type": "david-collection"
+          }, {
+            "type": "david-collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

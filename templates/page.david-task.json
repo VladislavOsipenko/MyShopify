@@ -7,16 +7,48 @@
         "padding_bottom": 28
       }
     },
-    "6287baa5-c06e-4071-8a50-71df9f92bbb5": {
-      "type": "david-task",
+    "1cd59995-9448-4684-acd4-d1ec9568881a": {
+      "type": "david-task-collection",
+      "blocks": {
+        "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-1": {
+          "type": "david-collection",
+          "settings": {
+            "collection-new": true,
+            "collection_product": "copy-of-new-balance-ct302-v2"
+          }
+        },
+        "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-2": {
+          "type": "david-collection",
+          "settings": {
+            "collection-new": true,
+            "collection_product": "fresh-foam-1080"
+          }
+        },
+        "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-3": {
+          "type": "david-collection",
+          "settings": {
+            "collection-new": true,
+            "collection_product": "new-balance-u574-v2"
+          }
+        },
+        "1ae599ea-9989-43e0-8393-e1f2e12d7ce0": {
+          "type": "david-collection",
+          "settings": {
+            "collection-new": true,
+            "collection_product": "y-3-gazelle"
+          }
+        }
+      },
+      "block_order": [
+        "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-1",
+        "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-2",
+        "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-3",
+        "1ae599ea-9989-43e0-8393-e1f2e12d7ce0"
+      ],
       "settings": {
-        "title": "JISOO FROM BLACKPINK",
-        "subtitle": "red sweatshirt",
-        "prise": "$320.00",
-        "image_bg": "shopify:\/\/shop_images\/bg.jpg",
-        "image_girl": "shopify:\/\/shop_images\/girl.svg",
-        "image_sweater": "shopify:\/\/shop_images\/sweater.svg",
-        "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim."
+        "collection-title": "Collection",
+        "slider_items": 3,
+        "slider_items_mob": 1
       }
     },
     "1cf6e900-b640-4666-b585-acb6d0b15009": {
@@ -59,6 +91,18 @@
         "template--18977336295735__1cf6e900-b640-4666-b585-acb6d0b15009-16855323579b59c5ef-2"
       ],
       "settings": {
+      }
+    },
+    "1d6c4f61-56a7-4455-a864-27f5a34d92a1": {
+      "type": "david-task",
+      "settings": {
+        "title": "JISOO FROM BLACKPINK",
+        "subtitle": "red sweatshirt",
+        "prise": "$320.00",
+        "image_bg": "shopify:\/\/shop_images\/bg.jpg",
+        "image_girl": "shopify:\/\/shop_images\/girl.svg",
+        "image_sweater": "shopify:\/\/shop_images\/sweater.svg",
+        "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim."
       }
     },
     "2d3d62ea-4e1a-44ac-a393-2ec0fff2388c": {
@@ -113,8 +157,9 @@
   },
   "order": [
     "main",
-    "6287baa5-c06e-4071-8a50-71df9f92bbb5",
+    "1cd59995-9448-4684-acd4-d1ec9568881a",
     "1cf6e900-b640-4666-b585-acb6d0b15009",
+    "1d6c4f61-56a7-4455-a864-27f5a34d92a1",
     "2d3d62ea-4e1a-44ac-a393-2ec0fff2388c"
   ]
 }

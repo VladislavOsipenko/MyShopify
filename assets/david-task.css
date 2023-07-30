@@ -22,15 +22,17 @@ body {
 
 .section-david-task {
     min-height: 465px;
-
+    width: 100%;
 }
 
 .section-david-task__bg {
-    width: 100%;
+    width: inherit;
     position: relative;
     z-index: -2;
 }
-.backgraund {
+.background {
+
+    width: inherit;
     position: relative;
     z-index: -1;
 }
@@ -212,7 +214,7 @@ body {
     .section-david-task__wrapper {
         margin-top: 20px;
         flex-wrap: wrap;
-        width: 500px;
+        width: 100%;
         justify-content: center;
         align-items: center;
     }
