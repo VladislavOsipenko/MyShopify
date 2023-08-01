@@ -14,6 +14,7 @@
           "type": "david-collection",
           "settings": {
             "collection-new": true,
+            "collection_background": "shopify:\/\/shop_images\/collection-bg.jpg",
             "collection_product": "copy-of-new-balance-ct302-v2"
           }
         },
@@ -21,6 +22,7 @@
           "type": "david-collection",
           "settings": {
             "collection-new": true,
+            "collection_background": "shopify:\/\/shop_images\/collection-bg.jpg",
             "collection_product": "fresh-foam-1080"
           }
         },
@@ -28,6 +30,7 @@
           "type": "david-collection",
           "settings": {
             "collection-new": true,
+            "collection_background": "shopify:\/\/shop_images\/collection-bg.jpg",
             "collection_product": "new-balance-u574-v2"
           }
         },
@@ -35,6 +38,7 @@
           "type": "david-collection",
           "settings": {
             "collection-new": true,
+            "collection_background": "shopify:\/\/shop_images\/collection-bg.jpg",
             "collection_product": "y-3-gazelle"
           }
         }
@@ -46,7 +50,7 @@
         "1ae599ea-9989-43e0-8393-e1f2e12d7ce0"
       ],
       "settings": {
-        "collection-title": "Collection",
+        "collection_title": "Collection",
         "slider_items": 3,
         "slider_items_mob": 1
       }

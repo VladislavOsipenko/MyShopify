@@ -13,17 +13,12 @@
               <div class="section-david-collection__slider-item">
                 {% if block.settings.collection_background != blank %}
                   <div class="slider-item__image-bg">
-                    <img
-                      src="/assets/collection-bg.jpg"
-                      alt="item-bg"
-                      class="slider-item__bg"
-                      loading="lazy">
-                  </div>
-                {% else %}
-                  <div class="slider-item__image-bg">
-                    {{ block.settings.collection_background }}
+                    <img src="{{ block.settings.collection_background | img_url: 'master' }}" alt="bg">
                   </div>
                 {% endif %}
+                <div class="slider-item__logo">
+                  SP
+                </div>
                 <a href="{{ product.url }}" class="slider-item__link"></a>
                 <div class="slider-item__image">
                   <img
@@ -32,7 +27,35 @@
                     class="slider-item__picture"
                     loading="lazy">
                 </div>
-
+                {% if block.settings.collection_new == true %}
+                  <div class="slider-item__new-wrapper">
+                    <div class="slider-item__new">
+                      new
+                    </div>
+                  </div>
+                {% endif %}
+                <div class="slider-item__wrapper">
+                  <div class="slider-item__info">
+                    <h4 class="slider-item__title">
+                      {{ product.title }}
+                    </h4>
+                    <div class="slider-item__price">
+                      {{ product.price | money_with_currency }}
+                    </div>
+                    <div class="slider-item__button">
+                      <a class="slider-item__btn" href="{{ block.settings.collection_catalog }}">Go to catalog</a>
+                    </div>
+                  </div>
+                  <div class="slider-item__sale">
+                    <div class="slider-item__sale-promo">
+                      {{ block.settings.collection_promo }}
+                    </div>
+                    <div class="slider-item__sale-procent">
+                      {{ block.settings.collection_procent }}
+                    </div>
+                    <p>sale</p>
+                  </div>
+                </div>
               </div>
             {% endif %}
           {% endfor %}
@@ -44,7 +67,7 @@
 {% endif %}
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    $('#shopify-section-               {{section.id}} .section-david-reviews-slider-list').slick({
+    $('#shopify-section-{{section.id}} .section-david-collection__slider-list').slick({
       centerMode: true,
       adaptiveHeight: true,
       infinite: true,
@@ -53,8 +76,8 @@
       slidesToShow: 3,
       speed: 1000,
       dots: true,
-      prevArrow: $('#shopify-section-               {{section.id}} .arrow-prew'),
-      nextArrow: $('#shopify-section-               {{section.id}} .arrow-next'),
+      prevArrow: $('#shopify-section-{{section.id}} .arrow-prew'),
+      nextArrow: $('#shopify-section-{{section.id}} .arrow-next'),
       responsive: [
         {
           breakpoint: 1300,
@@ -113,18 +136,35 @@
         "type": "david-collection",
         "settings": [
           {
+            "type": "collection",
+            "id": "collection_catalog",
+            "label": "Collection"
+          },
+          {
             "type": "checkbox",
-            "id": "collection-new",
+            "id": "collection_new",
             "label": "collection new",
             "default": true
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "collection_background",
             "label": "Item background"
-          }, {
+          },
+          {
             "type": "product",
             "id": "collection_product",
             "label": "Our collection Product"
+          }, {
+            "type": "text",
+            "id": "collection_promo",
+            "label": "Promo",
+            "default": "promo: 123"
+          }, {
+            "type": "text",
+            "id": "collection_procent",
+            "label": "Procent",
+            "default": "40%"
           }
         ]
       }
