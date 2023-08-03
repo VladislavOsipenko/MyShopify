@@ -1,29 +1,78 @@
 .section-david-collection {
     background: #515151;
+    padding-bottom: 70px;
+
 }
 
 .section-david-collection__container {
     
 }
 
-.section-david-collection__title {}
+.section-david-collection__title {
+    color: #FEFEFE;
+    margin: 0;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
 
-.section-david-collection__slider {}
+.section-david-collection__slider {
+    margin-top: 90px;
+}
 
 .section-david-collection__slider-list {
     position: relative;
     z-index: 1;
 }
 
+.section-david-collection__slider-list .slick-list .slick-track {
+    height: 440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.section-david-collection__slider-list .slick-list .slick-track .slick-slide {
+    transition: 0.3s all linear;
+    opacity: 0;
+    transform: scale(0.75);
+    position: relative;
+    z-index: -1;
+}
+.section-david-collection__slider-list .slick-list .slick-track .slick-center {
+    transition: 0.3s all linear;
+    transform: scale(1);
+    position: relative;
+    z-index: 2;
+}
+
+
+.section-david-collection__slider-list .slick-list .slick-track .slick-cloned {
+    opacity: 0;
+}
+.section-david-collection__slider-list .slick-list .slick-track .slick-slide {
+    opacity: 0;
+}
+.section-david-collection__slider-list .slick-list .slick-track .slick-center:nth-child(1n){
+    opacity: 1;
+}
+.section-david-collection__slider-list .slick-list .slick-track .slick-active {
+    opacity: 0.5;
+}
+
+
 .section-david-collection__slider-item {
-    width: 775px;
+    max-width: 775px;
     height: 440px;
     position: relative;
+    justify-content: center;
 }
 
 .slider-item__image-bg {
     position: absolute;
-    width: inherit;
+    width: 775px;
     height: inherit;
     top: 0;
     overflow: hidden;
@@ -40,10 +89,11 @@
     height: 620px;
 }
 
+
 .slider-item__logo {
     position: absolute;
     bottom: 25px;
-    left: 25px;
+    left: -140px;
     color: #FFF;
     font-size: 40px;
     font-style: italic;
@@ -59,7 +109,7 @@
     width: 564px;
     height: 247px;
     position: absolute;
-    left: 120px;
+    left: -55px;
     right: 90px;
     bottom: 40px;
 }
@@ -74,8 +124,9 @@
     display: flex;
     padding: 85px 25px 0 25px;
     justify-content: space-between;
-    position: relative;
+    position: absolute;
     z-index: 2;
+    width: 176%;
 }
 
 .slider-item__info {}
@@ -83,7 +134,7 @@
 .slider-item__new-wrapper {
     position: absolute;
     top: 25px;
-    left: 25px;
+    left: -145px;
     border-radius: 21.579px;
     width: 123px;
     height: 41px;

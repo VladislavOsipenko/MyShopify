@@ -65,27 +65,20 @@
   </div>
 
 {% endif %}
+{{ 'slick.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     $('#shopify-section-{{section.id}} .section-david-collection__slider-list').slick({
       centerMode: true,
-      adaptiveHeight: true,
-      infinite: true,
-      slidesToShow: {{ section.settings.slider_items }},
-      slidesToScroll: 1,
       slidesToShow: 3,
+      slidesToScroll: 1,
       speed: 1000,
+      arrows: false,
       dots: true,
-      prevArrow: $('#shopify-section-{{section.id}} .arrow-prew'),
-      nextArrow: $('#shopify-section-{{section.id}} .arrow-next'),
       responsive: [
         {
-          breakpoint: 1300,
-          settings: {
-            slidesToShow: {{ section.settings.slider_items_mob }},
-            slidesToScroll: {{ section.settings.slider_items_mob }}
-          }
-        }, {
           breakpoint: 576,
           settings: {
             slidesToShow: 1,
@@ -97,10 +90,6 @@
   });
 </script>
 
-
-{{ 'slick.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'jquery-3.6.3.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
 {% schema %}
   {
     "name": "David collection",
@@ -115,8 +104,8 @@
       }, {
         "type": "range",
         "id": "slider_items",
-        "min": 3,
-        "max": 8,
+        "min": 1,
+        "max": 3,
         "step": 1,
         "label": "Items per page",
         "default": 3
@@ -124,7 +113,7 @@
         "type": "range",
         "id": "slider_items_mob",
         "min": 1,
-        "max": 8,
+        "max": 3,
         "step": 1,
         "label": "Items per page",
         "default": 1

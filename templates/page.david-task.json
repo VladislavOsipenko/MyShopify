@@ -13,33 +13,45 @@
         "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-1": {
           "type": "david-collection",
           "settings": {
-            "collection-new": true,
+            "collection_catalog": "",
+            "collection_new": true,
             "collection_background": "shopify:\/\/shop_images\/collection-bg.jpg",
-            "collection_product": "copy-of-new-balance-ct302-v2"
+            "collection_product": "ultraboost-light-shoes",
+            "collection_promo": "promo: 123",
+            "collection_procent": "40%"
           }
         },
         "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-2": {
           "type": "david-collection",
           "settings": {
-            "collection-new": true,
+            "collection_catalog": "",
+            "collection_new": true,
             "collection_background": "shopify:\/\/shop_images\/collection-bg.jpg",
-            "collection_product": "fresh-foam-1080"
+            "collection_product": "adizero-11-running-shoes",
+            "collection_promo": "promo: 123",
+            "collection_procent": "40%"
           }
         },
         "template--18977336295735__1cd59995-9448-4684-acd4-d1ec9568881a-david-collection-3": {
           "type": "david-collection",
           "settings": {
-            "collection-new": true,
+            "collection_catalog": "",
+            "collection_new": true,
             "collection_background": "shopify:\/\/shop_images\/collection-bg.jpg",
-            "collection_product": "new-balance-u574-v2"
+            "collection_product": "adizero-11-running-shoes",
+            "collection_promo": "promo: 123",
+            "collection_procent": "40%"
           }
         },
         "1ae599ea-9989-43e0-8393-e1f2e12d7ce0": {
           "type": "david-collection",
           "settings": {
-            "collection-new": true,
+            "collection_catalog": "",
+            "collection_new": true,
             "collection_background": "shopify:\/\/shop_images\/collection-bg.jpg",
-            "collection_product": "y-3-gazelle"
+            "collection_product": "y-3-gazelle",
+            "collection_promo": "promo: 123",
+            "collection_procent": "40%"
           }
         }
       },
