@@ -243,3 +243,126 @@
     line-height: 103.9%; /* 27.184px */
     letter-spacing: 0.785px;
 }
+
+@media screen and (max-width: 1200px) {
+    .slider-item__wrapper {
+        width: 210%;
+    }
+    .slider-item__image-bg {
+        width: 700px;
+    }
+    .slider-item__image {
+        left: -100px;
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .slider-item__image-bg {
+        width: 100%;
+    }
+    .slider-item__wrapper {
+        width: 100%;
+    }
+    .slider-item__image {
+        left: 110px;
+    }
+    .slider-item__new-wrapper {
+        left: 25px;
+    }
+    .slider-item__logo {
+        left: 25px
+
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .slider-item__image {
+        left: 30px;
+        transform: scale(0.80);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slide-item__collection {
+        padding-bottom: 35px;
+    }
+    .slider-item__image {
+        left: -10px;
+        bottom: 20px;
+        transform: scale(0.65);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .slider-item__wrapper {
+        gap: 10px;
+    } 
+    .slider-item__title {
+        font-size: 20px;
+    }
+    .slider-item__price {
+        font-size: 22px;
+    }
+    .slider-item__button {
+        width: 160px;
+    }
+    .slider-item__button a {
+       font-size: 16px;
+    }
+    .slider-item__image {
+        left: -80px;
+        bottom: 20px;
+        transform: scale(0.60);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .slider-item__image-bg {
+        width: 130%;
+    }
+    .slider-item__wrapper {
+        width: 130%;
+    }
+    .slider-item__new-wrapper {
+        left: -15px;
+        width: 70px;
+        height: 35px;
+    }
+    .slider-item__new {
+        font-size: 16px;
+    }
+    .slider-item__logo {
+        left: -25px;
+    }
+    .slider-item__image {
+        left: -120px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .slider-item__image {
+        left: -140px;
+        transform: scale(0.50);
+    }
+    .slider-item__sale {
+        width: 90px;
+        height: 80px;
+    }
+    .slider-item__sale p {
+        font-size: 18px;
+    }
+    .slider-item__sale-procent {
+        font-size: 20px;
+    }
+    .slider-item__sale-promo {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .slider-item__image {
+        left: -160px;
+        transform: scale(0.50);
+    }
+}
